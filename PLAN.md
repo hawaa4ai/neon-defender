@@ -13,7 +13,7 @@ Dokumen ini adalah rencana kerja dan log perkembangan proyek game arcade 2D dala
 - **Audio**: Web Audio API Sintetis (tanpa file audio eksternal)
 - **Penyimpanan**: LocalStorage (`arcade_leaderboard`, `arcade_last_username`)
 - **Kebijakan Caching**: Zero-Cache (`no-cache, no-store, must-revalidate`)
-- **Deployment**: GitHub Pages — **belum dipublikasikan**
+- **Deployment**: GitHub Pages — **LIVE** di https://hawaa4ai.github.io/neon-defender/
 
 ---
 
@@ -92,12 +92,15 @@ Tembakan berjalan **otomatis** selama misi. Fokus pemain adalah menghindar, meng
 - [x] Tombol mute dengan preferensi tersimpan (`arcade_muted`).
 
 ### Phase 5: Publikasi GitHub Pages
-- [ ] Inisialisasi git dan branch `main`. *(belum dilakukan)*
-- [ ] Buat repository GitHub publik via `gh repo create <repo> --public --source=. --remote=origin --push`.
-- [ ] Aktifkan GitHub Pages (CLI `gh api` atau Web UI Settings > Pages).
-- [ ] Sediakan snippet terminal siap salin untuk alur Google AI Studio.
-- [ ] Pantau workflow build di tab Actions (`gh run list`).
-- [ ] Tes live demo dan pastikan pembaruan Zero-Cache langsung tampil.
+- [x] Inisialisasi git dan branch `main`.
+- [x] Buat repository GitHub publik via `gh repo create neon-defender --public --source=. --remote=origin --push`.
+- [x] Aktifkan GitHub Pages dari branch `main`, folder `/` (root).
+- [x] Sediakan snippet terminal siap salin untuk alur Google AI Studio.
+- [x] Pantau status build Pages (`gh api /repos/hawaa4ai/neon-defender/pages/builds/latest`).
+- [x] Tes live demo dan pastikan halaman tampil (HTTP 200 + meta Zero-Cache).
+
+**Repository**: https://github.com/hawaa4ai/neon-defender  
+**Live Demo**: https://hawaa4ai.github.io/neon-defender/
 
 ---
 
@@ -111,8 +114,9 @@ Tembakan berjalan **otomatis** selama misi. Fokus pemain adalah menghindar, meng
 | **T-03** | Username modal & leaderboard Top 10 | Phase 2 | `DONE` | AI | Validasi, sanitasi, highlight |
 | **T-04** | Pergerakan, 4 musuh, tabrakan, power-up, level | Phase 3 | `DONE` | AI | Auto-fire, nyawa, skor |
 | **T-05** | Audio sintetis, partikel, shake, HUD | Phase 4 | `DONE` | AI | Web Audio + visual juice |
-| **T-06** | Deployment GitHub Pages | Phase 5 | `TODO` | AI | Menunggu perintah publikasi (repo wajib Public) |
+| **T-06** | Deployment GitHub Pages | Phase 5 | `DONE` | AI | Live: https://hawaa4ai.github.io/neon-defender/ |
 | **T-07** | Uji otomatis headless Chrome | QA | `DONE` | AI | Menu, main, game over, pause, leaderboard, restart: 0 error |
+| **T-08** | Publikasi repository publik `neon-defender` | Phase 5 | `DONE` | AI | https://github.com/hawaa4ai/neon-defender |
 
 *Status: `TODO` | `IN-PROGRESS` | `DONE`*
 
@@ -122,6 +126,7 @@ Tembakan berjalan **otomatis** selama misi. Fokus pemain adalah menghindar, meng
 
 | Versi | Tanggal | Pelaksana | Ringkasan Perubahan | Referensi Commit |
 | :--- | :--- | :--- | :--- | :--- |
+| **v1.0.1** | 2026-10-31 | AI | Publikasi repo publik `neon-defender` dan aktivasi GitHub Pages; live demo terverifikasi HTTP 200 | — |
 | **v1.0.0** | 2026-10-31 | AI | Rilis game **Neon Defender**: 4 tipe musuh, level dinamis, power-up, audio sintetis, partikel, screen shake, HUD, modal username, dan leaderboard Top 10. Lolos uji alur headless Chrome tanpa error. | — (lokal) |
 | **v0.2.2** | 2026-10-24 | AI | Menambahkan panduan alur integrasi khusus Google AI Studio & penegasan repo wajib Public | `07475fb` |
 | **v0.2.1** | 2026-10-24 | AI | Menambahkan panduan detail aktivasi GitHub Pages (CLI `gh api` & Web UI visual) serta troubleshooting | `3aaf671` |
